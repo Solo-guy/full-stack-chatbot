@@ -1,0 +1,22 @@
+name: Build and Push Docker image
+
+on:
+  push:
+    branches: [ "main" ]  # hoặc "master", tuỳ nhánh bạn xài
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v3
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build Docker image
+      run: docker build -t assmin1/chatbot-ai:latest .
+
+    - name: Push Docker image
+      run: docker push assmin1/chatbot-ai:latest

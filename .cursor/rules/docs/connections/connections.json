@@ -1,0 +1,41 @@
+{
+    "apis": [
+      {
+        "name": "APIsix",
+        "url": "http://localhost:9080/admin",
+        "type": "admin"
+      },
+      {
+        "name": "Keycloak",
+        "url": "http://localhost:8080/auth",
+        "type": "auth"
+      },
+      {
+        "name": "LiveKit",
+        "url": "http://localhost:7880",
+        "type": "call"
+      },
+      {
+        "name": "Prometheus",
+        "url": "http://localhost:9090/api/v1",
+        "type": "monitoring"
+      }
+    ],
+    "webhooks": [
+      {
+        "name": "APIsix",
+        "url": "http://localhost:9080/webhooks",
+        "events": ["route_updated", "plugin_updated"]
+      },
+      {
+        "name": "Keycloak",
+        "url": "http://localhost:8080/admin/webhooks",
+        "events": ["config_updated"]
+      },
+      {
+        "name": "GitLab",
+        "url": "https://gitlab.com/api/v4/projects/hooks",
+        "events": ["push"]
+      }
+    ]
+  }
