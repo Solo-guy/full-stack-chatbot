@@ -13,7 +13,7 @@ apscheduler==3.10.1
 beautifulsoup4==4.12.2
 pypdf2==3.0.1 
 scrapy==2.10.0 
-sentence-transformers==2.2.2 
+sentence-transformers==4.1.0 
 requests==2.31.0 
 websockets==11.0.3
 
